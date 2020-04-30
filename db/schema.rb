@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_25_230139) do
+ActiveRecord::Schema.define(version: 2020_04_29_094747) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,12 +20,16 @@ ActiveRecord::Schema.define(version: 2020_04_25_230139) do
     t.string "search"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "saved_id", null: false
+    t.index ["saved_id"], name: "index_comments_on_saved_id"
   end
 
   create_table "saveds", force: :cascade do |t|
     t.string "topic"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_saveds_on_user_id"
   end
 
   create_table "sizes", force: :cascade do |t|
@@ -42,4 +46,6 @@ ActiveRecord::Schema.define(version: 2020_04_25_230139) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "comments", "saveds"
+  add_foreign_key "saveds", "users"
 end
