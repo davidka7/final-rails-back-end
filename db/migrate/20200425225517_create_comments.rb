@@ -4,6 +4,7 @@ class CreateComments < ActiveRecord::Migration[6.0]
       t.string :comment
       t.string :search
      # t.references :saved, foreign_key: true
+     t.references :saved, foreign_key: true
       t.timestamps
     end
   end

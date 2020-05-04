@@ -1,6 +1,6 @@
 class Saved < ApplicationRecord
     has_many :comments
-    #, dependent: :destroy 
+    # dependent: :destroy 
     belongs_to :user
     
 
