@@ -1,5 +1,5 @@
 class CommentSerializer < ActiveModel::Serializer
   
-    attributes  :comment, :search
+    attributes  :comment, :search, :saved_id, :id
 
 end

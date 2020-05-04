@@ -9,7 +9,7 @@ User.destroy_all
 Saved.destroy_all
 Comment.destroy_all
 Size.destroy_all
-
+User1 = User.create( username: "cat", password: "12345", email: "sap@gmail.com")
 topic1 = Saved.create(user_id: 6, topic: "dogs")
 topic2 = Saved.create(user_id: 4, topic: "cats")
 topic3 = Saved.create(user_id: 7, topic: "pop")

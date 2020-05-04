@@ -13,7 +13,7 @@ def update
 comment = Comment.find(params[:id])
 comment.update(comment_params)
 if comment.valid? 
-    render json: { comment: SavedsSerializer.new(comment) }
+    render json: { comment: CommentSerializer.new(comment) }
 else
     render json: { error: 'failed to update comment' }, status: :not_acceptable
 end

@@ -1,4 +1,4 @@
 class SavedSerializer < ActiveModel::Serializer
   
-    attributes :topic
+    attributes :topic, :user_id, :id
 end
