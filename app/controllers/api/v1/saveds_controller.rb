@@ -12,7 +12,7 @@ def update
     saveds = Saved.find(params[:id])
     saveds.update(saveds_params)
     if saveds.valid? 
-        render json: { chore: SavedSerializer.new(saveds) }
+        render json: { saved: SavedSerializer.new(saveds) }
     else
         render json: { error: 'failed to update save' }, status: :not_acceptable
     end

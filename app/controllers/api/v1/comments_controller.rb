@@ -6,7 +6,7 @@ end
 
 def create
 comment = Comment.create(comment_params)
-render json: {saveds: CommentSerializer.new(comment)}
+render json: {comments: CommentSerializer.new(comment)}
 end
 
 def update
@@ -28,6 +28,6 @@ end
 private
 
 def comment_params
-params.require(:comment).permit(:comment, :search)
+params.require(:comment).permit(:comment, :search, :saved_id)
 end
 end
