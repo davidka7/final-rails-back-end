@@ -28,6 +28,6 @@ end
 private
 
 def comment_params
-params.require(:comment).permit(:comment, :search, :saved_id)
+params.require(:comment).permit(:comment, :search, :lat, :lng, :saved_id)
 end
 end

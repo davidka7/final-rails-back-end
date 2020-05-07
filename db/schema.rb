@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2020_04_25_230139) do
   create_table "comments", force: :cascade do |t|
     t.string "comment"
     t.string "search"
+    t.float "lat"
+    t.float "lng"
     t.bigint "saved_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
