@@ -78,7 +78,7 @@ Size.destroy_all
 
 
 
-
+User.create(username: "david", password: '123456', email:"david.perekopskiy@go.shoreline.edu")
 
 sizes = ['4', '5']
 sizes.map {|size| Size.create(number: size)}
